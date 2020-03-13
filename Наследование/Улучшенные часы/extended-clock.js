@@ -1,8 +1,8 @@
 var modInp = require("./clock.js");
 
 class ExtendedClock extends modInp {
-    constructor(param, precision = 1000) {
-        super(param);
+    constructor({template, precision = 1000}) {
+        super({ template });
         this.precision = precision;
     }
 
@@ -18,6 +18,5 @@ class ExtendedClock extends modInp {
 
 }
 
-let ex = new ExtendedClock('h:m:s', 2000);
-
+let ex = new ExtendedClock({ template: 'h:m:s', precision : 10000});
 ex.start();
